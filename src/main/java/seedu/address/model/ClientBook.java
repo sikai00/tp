@@ -52,12 +52,21 @@ public class ClientBook implements ReadOnlyClientBook {
     }
 
     /**
+     * Replaces the contents of the client list with {@code meetings}.
+     * {@code meetings} must not contain duplicate meetings.
+     */
+    public void setMeetings(List<Meeting> meetings) {
+        this.meetings.setMeetings(meetings);
+    }
+
+    /**
      * Resets the existing data of this {@code ClientBook} with {@code newData}.
      */
     public void resetData(ReadOnlyClientBook newData) {
         requireNonNull(newData);
 
         setClients(newData.getClientList());
+        setMeetings(newData.getMeetingList());
     }
 
     //// client-level operations

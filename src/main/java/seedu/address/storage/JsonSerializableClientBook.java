@@ -53,6 +53,9 @@ class JsonSerializableClientBook {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_CLIENT);
             }
             clientBook.addClient(person);
+            if (person.hasMeeting()) {
+                clientBook.addMeeting(person.getMeeting());
+            }
         }
         return clientBook;
     }
