@@ -20,6 +20,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.exceptions.DuplicateClientException;
+import seedu.address.model.meeting.Meeting;
 import seedu.address.testutil.ClientBuilder;
 
 public class ClientBookTest {
@@ -49,7 +50,9 @@ public class ClientBookTest {
         Client editedAlice = new ClientBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         List<Client> newClients = Arrays.asList(ALICE, editedAlice);
-        ClientBookStub newData = new ClientBookStub(newClients);
+        // This test only tests for duplicate clients with same identity field. Meeting list can be empty.
+        List<Meeting> emptyMeetings = Collections.emptyList();
+        ClientBookStub newData = new ClientBookStub(newClients, emptyMeetings);
 
         assertThrows(DuplicateClientException.class, () -> clientBook.resetData(newData));
     }
@@ -88,14 +91,21 @@ public class ClientBookTest {
      */
     private static class ClientBookStub implements ReadOnlyClientBook {
         private final ObservableList<Client> clients = FXCollections.observableArrayList();
+        private final ObservableList<Meeting> meetings = FXCollections.observableArrayList();
 
-        ClientBookStub(Collection<Client> clients) {
+        ClientBookStub(Collection<Client> clients, Collection<Meeting> meetings) {
             this.clients.setAll(clients);
+            this.meetings.setAll(meetings);
         }
 
         @Override
         public ObservableList<Client> getClientList() {
             return clients;
+        }
+
+        @Override
+        public ObservableList<Meeting> getMeetingList() {
+            return meetings;
         }
     }
 
