@@ -179,9 +179,9 @@ Are you new to *MyInsuRec*? This section is the place to start!
 
 Here, we will be guiding you on the basic features of *MyInsuRec* and help you get familiarized with it.
 
-1. When we first launch *MyInsuRec*, *MyInsuRec* will have already been preloaded with some sample data. We will be using this sample data to get familiar with *MyInsuRec*!
+* When we first launch *MyInsuRec*, *MyInsuRec* will have already been preloaded with some sample data. We will be using this sample data to get familiar with *MyInsuRec*!
 
-2. Type in `addClient n/Tommy Tan p/81234567` to add a client named 'Tommy Tan' and has a contact number '81234567'. We will see the list of clients update to include this newly added client, with his phone number! The image below shows *MyInsuRec* after adding Tommy.
+* Type in `addClient n/Tommy Tan p/81234567` to add a client named 'Tommy Tan' and has a contact number '81234567'. We will see the list of clients update to include this newly added client, with his phone number! The image below shows *MyInsuRec* after adding Tommy.
 
 ![AddClientTommy](images/quick-start/AddClientTommy.png)
 
@@ -189,41 +189,29 @@ Here, we will be guiding you on the basic features of *MyInsuRec* and help you g
 Both client name and their phone number are **needed** to add the client into *MyInsuRec*.
 </div>
 
-<ol start="3">
-3. Tommy has also given us his email address, his address as well as his birthday, as such we would like to update Tommy's record. To do that, we first need to get Tommy's index from the list of clients, which is 7. Type in `editClient i/7 e/tommytan21@gmail.com a/167 Canning Road bd/25081982` and hit enter. Tommy's record in the list of clients will update with the newly inputted details. The image below shows *MyInsuRec* after updating Tommy with the additional details.
-</ol>
+* Tommy has also given us his email address, his address as well as his birthday, as such we would like to update Tommy's record. To do that, we first need to get Tommy's index from the list of clients, which is 7. Type in `editClient i/7 e/tommytan21@gmail.com a/167 Canning Road bd/25081982` and hit enter. Tommy's record in the list of clients will update with the newly inputted details. The image below shows *MyInsuRec* after updating Tommy with the additional details.
 
 ![EditClientTommy](images/quick-start/EditClientTommy.png)
 
-<ol start="4">
-4. We can also directly add these optional fields (email, address, etc.) when we are adding the client for the first time! So, `addClient n/Tammy Lim p/90127654 e/tammylim@hotmail.com b/09091973` also adds in the client's email and birthday directly.
-</ol>
+* We can also directly add these optional fields (email, address, etc.) when we are adding the client for the first time! So, `addClient n/Tammy Lim p/90127654 e/tammylim@hotmail.com b/09091973` also adds in the client's email and birthday directly.
 
 <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 See [addClient](#311-adding-a-client-addclient) for more variety of optional fields!
 </div>
 
-<ol start="5">
-5. Now we would like to add in an upcoming meeting with our client 'Bernice Yu' (index 2 in our sample data). We can do that by doing `addMeeting i/2 d/27102022 st/1400 et/1600 dn/Review Product 2` (You can replace `d/27102022` with today's date in the DDMMYYYY format)! When we hit enter, *MyInsuRec* will show us the list of meetings, including the one we just added. The image below shows the list of meetings after adding the meeting with Bernice.
-</ol>
+* Now we would like to add in an upcoming meeting with our client 'Bernice Yu' (index 2 in our sample data). We can do that by doing `addMeeting i/2 d/27102022 st/1400 et/1600 dn/Review Product 2` (You can replace `d/27102022` with today's date in the DDMMYYYY format)! When we hit enter, *MyInsuRec* will show us the list of meetings, including the one we just added. The image below shows the list of meetings after adding the meeting with Bernice.
 
 ![AddMeetingBernice](images/quick-start/AddMeetingBernice.png)
 
-<ol start="6">
-6. We would like to get Bernice's contact number and message about her upcoming meeting! We can call `viewMeeting i/1` to help us. This brings up a more detailed view of the meeting, with information such as description of the meeting and Bernice's contact number. The image below shows *MyInsuRec* after using the `viewMeeting` command.
-</ol>
+* We would like to get Bernice's contact number and message about her upcoming meeting! We can call `viewMeeting i/1` to help us. This brings up a more detailed view of the meeting, with information such as description of the meeting and Bernice's contact number. The image below shows *MyInsuRec* after using the `viewMeeting` command.
 
 ![ViewMeetingBernice](images/quick-start/ViewMeetingBernice.png)
 
-<ol start="7">
-7. Now, to go back to the list of clients, simply type in `listClient`. This brings us back to the list of clients. The image below shows the current state of *MyInsuRec* after following all the previous steps.
-</ol>
+* Now, to go back to the list of clients, simply type in `listClient`. This brings us back to the list of clients. The image below shows the current state of *MyInsuRec* after following all the previous steps.
 
 ![ListClient](images/quick-start/ListClient.png)
 
-<ol start="8">
-8. Suppose your company introduced a new product 'MyInsureCare' that you are interested to sell, and would like to add it into *MyInsuRec*! We can do so via `addProduct pd/MyInsureCare`. This adds a product 'MyInsureCare' and also brings us to the list of product with the newly added product. The image below shows *MyInsuRec* after adding the product.
-</ol>
+* Suppose your company introduced a new product 'MyInsureCare' that you are interested to sell, and would like to add it into *MyInsuRec*! We can do so via `addProduct pd/MyInsureCare`. This adds a product 'MyInsureCare' and also brings us to the list of product with the newly added product. The image below shows *MyInsuRec* after adding the product.
 
 <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 You can use `listClient`, `listMeeting` and `listProduct` to traverse between the different lists accordingly.
@@ -231,9 +219,7 @@ You can use `listClient`, `listMeeting` and `listProduct` to traverse between th
 
 ![AddProductMyInsureCare](images/quick-start/AddProductMyInsureCare.png)
 
-<ol start="9">
-9. Now, we want to add a client named who has already purchased 'MyInsureCare'. To do that, we can once again type in `addClient n/Ng Jun Yi p/81230987 pd/MyInsureCare` to add a client and indicate that he has bought 'MyInsureCare'. The image below shows *MyInsuRec* after adding the client with the product.
-</ol>
+* Now, we want to add a client named who has already purchased 'MyInsureCare'. To do that, we can once again type in `addClient n/Ng Jun Yi p/81230987 pd/MyInsureCare` to add a client and indicate that he has bought 'MyInsureCare'. The image below shows *MyInsuRec* after adding the client with the product.
 
 ![AddClientJunYiWithProduct](images/quick-start/AddClientJunYiWithProduct.png)
 
@@ -241,9 +227,7 @@ You can use `listClient`, `listMeeting` and `listProduct` to traverse between th
 Only products added already via `addProduct` can be used! This is to help ensure the cleanliness of *MyInsuRec*. So, add your product via `addProduct` before using it to add a client with that product! See [addProduct](#331-adding-a-product-addproduct).
 </div>
 
-<ol start="10">
-10. Unfortunately 'Alex Yeoh' is no longer our client, and so we want delete him from our records. To do that, type in `delClient i/1`. The image below shows *MyInsuRec* after deleting the client.
-</ol>
+* Unfortunately 'Alex Yeoh' is no longer our client, and so we want delete him from our records. To do that, type in `delClient i/1`. The image below shows *MyInsuRec* after deleting the client.
 
 ![DelClientAlex](images/quick-start/DelClientAlex.png)
 
@@ -257,9 +241,9 @@ Welcome to your new and organized life, and happy (financial) advising!
 
 ## 7. Features
 
-This section guides you on how to use features available in *MyInsuRec*. We lay out the command and parameters needed to use the feature, show an example input as well as its expected behaviour. We also include some tips and tricks (yay!) on how you can better use the feature and *MyInsuRec*.
+This section guides you on how to use features available in *MyInsuRec*. We lay out the command and parameters needed to use the feature, show some examples as well as its expected behaviour. We also include some tips and tricks (yay!) on how you can better use the feature and *MyInsuRec*.
 
-Do take some time to read the following note to better understand how you can use this section!
+**Do take some time to read the following note** to better understand how you can use this section!
 
 <div markdown="block" class="alert alert-info">
 
@@ -268,10 +252,12 @@ Do take some time to read the following note to better understand how you can us
 * Words in `UPPER_CASE` are the parameters to be supplied by you.<br>
   e.g. in `addClient n/NAME p/PHONE_NUMBER`, `NAME` and `PHONE_NUMBER` are parameters which can be used as `addClient n/John Tan p/12345678`.
 
+
 * Items in square brackets are optional, while those not in square brackets are compulsory.<br>
   e.g. `addClient n/NAME p/PHONE_NUMBER [a/ADDRESS] [e/EMAIL] [b/BIRTHDAY] [pd/PRODUCT]` can be used as <br>
   * `addClient n/John Tan p/12345678`
   * `addClient n/John p/12345678 e/John@abc.com b/12122000`
+
 
 * This symbol `||` indicates that only one of the optional parameters can be used. <br>
   **Using more than one optional parameter is strictly not allowed.** <br>
@@ -279,14 +265,18 @@ Do take some time to read the following note to better understand how you can us
   * `listClient pd/Product1`
   * `listClient b/week`
 
+
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+
 
 * Suppose you entered the same command multiple times, only the last command will be executed.
   e.g. if you specify `viewMeeting i/2viewMeeting i/2viewMeeting i/3`, only `viewMeeting i/3` will be taken.
 
+
 * If a parameter is expected only once in the command, but you specified it multiple times, only the last occurrence of the parameter will be taken.<br>
   e.g. if you specify `d/28092022 d/30092022`, only `d/30092022` will be taken.
+
 
 * Extraneous parameters for commands that do not take in parameters (such as `exit` and `help`) will be ignored.<br>
   e.g. if the command specifies `exit 123`, it will be interpreted as `exit`.
