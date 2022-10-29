@@ -601,7 +601,7 @@ If your changes to the data file makes its format invalid, MyInsuRec will discar
 
 #### 5.5.3 Change the color scheme
 
-MyInsuRec comes with a light and dark color scheme. To change between the two, simple click on the View menu button and select the desired mode!
+MyInsuRec comes with light and dark color schemes. To change between the two, simply click on the View menu button and select the desired mode!
 
 ![Dark Mode](images/DarkModeUi.png)
 
