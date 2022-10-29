@@ -20,11 +20,11 @@ title: User Guide
 
 ## 2. How to use this User Guide
 
-Welcome to *_MyInsuRec_ User Guide*!
+Welcome to _MyInsuRec_ User Guide!
 
-Thank you for choosing to use _MyInsuRec_! <br>
+Thank you for choosing to use _MyInsuRec_.
 
-In order to smoothen the learning curve for you, this guide would allow you to effectively learn how to use _MyInsuRec_.
+This guide smooths the learning curve and helps you effectively learn how to use _MyInsuRec_.
 
 Before we go on further, look out for these symbols in the User Guide as they provide some important message you might want to know!
 
@@ -35,9 +35,7 @@ Before we go on further, look out for these symbols in the User Guide as they pr
 | :exclamation:        | Crucial information needed for proper use of MyInsuRec.                 |
 | :bulb:               | Tips and tricks.                                                        |
 
-Now we can move on to talk more about _MyInsuRec_!
-
-<div markdown="span" class="alert alert-info">**:information_source: NOTE:**
+<div markdown="span" class="alert alert-info">**:information_source: Note:**
 If you have **not installed** _MyInsuRec_, you can follow the [installation guide](#32-installation-instructions) here!
 </div>
 
@@ -48,7 +46,7 @@ After you have installed _MyInsuRec_, you can
 4. Check out other advanced features under [Features](#5-features) once you got the hang of the basic features.
 5. Refer to our [glossary](#8-glossary) when you come across a unfamiliar term used.
 
-<div markdown="span" class="alert alert-info">**:information_source: NOTE:**
+<div markdown="span" class="alert alert-info">**:information_source: Note:**
 For **experienced users**, you can look at the [Command Summary](#7-command-summary) for a summarized table of all the commands available.
 </div>
 
@@ -60,7 +58,7 @@ We hope that this guide is helpful in smoothing out the learning curve for you!
 
 ## 3. Terminologies
 
-The following explains some terminology and main features of *MyInsuRec*:
+The following subsections explains some terminology and main features of *MyInsuRec*:
 
 ### 3.1 Clients
 
@@ -97,7 +95,7 @@ Beyond individual meetings, you can also:
 
 ### 3.3 Products
 
-*MyInsuRec* also includes the ability for you to define your products to track products your clients have purchased.
+*MyInsuRec* also includes the ability for you to define your products and help track products your clients have purchased.
 
 You can do product-specific tasks such as:
 
@@ -114,31 +112,31 @@ Beyond individual products, you can also:
 
 ### 4.1 Client List
 
-This is the view after executing the `listClient` command!
+This is the view after executing the `listClient` command.
 
 ![listClientWithDescription](images/ui-description/listClientWithDescription.png)
 
 ### 4.2 Meeting List
 
-This is the view after executing the `listMeeting` command!
+This is the view after executing the `listMeeting` command.
 
 ![listMeetingWithDescription](images/ui-description/listMeetingWithDescription.png)
 
 ### 4.3 Product List
 
-This is the view after executing the `listProduct` command!
+This is the view after executing the `listProduct` command.
 
 ![listProductWithDescription](images/ui-description/listProductWithDescription.png)
 
 ### 4.4 Detailed Client List
 
-This is the view after executing the `viewClient` command!
+This is the view after executing the `viewClient` command.
 
 ![viewClientWithDescription](images/ui-description/viewClientWithDescription.png)
 
 ### 4.5 Detailed Meeting View
 
-This is the view after executing the `viewMeeing` command!
+This is the view after executing the `viewMeeing` command.
 
 ![viewMeetingWithDescription](images/ui-description/viewMeetingWithDescription.png)
 
@@ -162,11 +160,11 @@ To install *MyInsuRec*, simply follow the steps below:
 
 1. Ensure that your system meets the [system requirements](#31-system-requirements).
 
-1. Download the latest **MyInsuRec.jar** from [here](https://github.com/AY2223S1-CS2103T-W16-4/tp/releases).
+2. Download the latest **MyInsuRec.jar** from [here](https://github.com/AY2223S1-CS2103T-W16-4/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your MyInsuRec.
+3. Copy the file to the folder you want to use as the _home folder_ for your MyInsuRec.
 
-1. Double-click the file to start the app. The GUI similar to the below should appear in a few seconds.
+4. Double-click the file to start the app. The GUI similar to the below should appear in a few seconds.
    ![Ui](images/Ui.png)
 
 Ta-da! *MyInsuRec* is now installed on your system.
@@ -187,7 +185,7 @@ Here, we will be guiding you on the basic features of *MyInsuRec* and help you g
 
 ![AddClientTommy](images/quick-start/AddClientTommy.png)
 
-<div markdown="span" class="alert alert-info">**:information_source: Note:**
+ <div markdown="span" class="alert alert-info">**:information_source: Note:**
 Both client name and their phone number are **needed** to add the client into *MyInsuRec*.
 </div>
 
@@ -197,7 +195,7 @@ Both client name and their phone number are **needed** to add the client into *M
 
 4. We can also directly add these optional fields (email, address, etc.) when we are adding the client for the first time! So, `addClient n/Tammy Lim p/90127654 e/tammylim@hotmail.com b/09091973` also adds in the client's email and birthday directly.
 
-<div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
+ <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 See [addClient](#311-adding-a-client-addclient) for more variety of optional fields!
 </div>
 
@@ -215,7 +213,7 @@ See [addClient](#311-adding-a-client-addclient) for more variety of optional fie
 
 8. Suppose your company introduced a new product 'MyInsureCare' that you are interested to sell, and would like to add it into *MyInsuRec*! We can do so via `addProduct pd/MyInsureCare`. This adds a product 'MyInsureCare' and also brings us to the list of product with the newly added product. The image below shows *MyInsuRec* after adding the product.
 
-<div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
+ <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 You can use `listClient`, `listMeeting` and `listProduct` to traverse between the different lists accordingly.
 </div>
 
@@ -225,7 +223,7 @@ You can use `listClient`, `listMeeting` and `listProduct` to traverse between th
 
 ![AddClientJunYiWithProduct](images/quick-start/AddClientJunYiWithProduct.png)
 
-<div markdown="span" class="alert alert-warning">**:exclamation: Caution:**
+ <div markdown="span" class="alert alert-warning">**:exclamation: Caution:**
 Only products added already via `addProduct` can be used! This is to help ensure the cleanliness of *MyInsuRec*. So, add your product via `addProduct` before using it to add a client with that product! See [addProduct](#331-adding-a-product-addproduct).
 </div>
 
