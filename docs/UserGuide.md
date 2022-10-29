@@ -680,14 +680,86 @@ To check that your system has the correct Java version (Java 11 and above) to ru
 
 --------------------------------------------------------------------------------------------------------------------
 
+## 10. Acknowledgements
+
+This project is based on the [AB3 project template](https://github.com/se-edu/addressbook-level3) by [se-education.org](https://se-education.org/).
+
+We thank the CS2103T and CS2101 teaching team and all our classmates for supporting us in this project!
+
 ## 11. Glossary
 
-{ glossary placeholder }
+### Quick Reference
+
+- [CLI](#cli)
+- [GUI](#gui)
+- [INDEX](#index)
+- [JSON file](#json-file)
+- [JAR file](#jar-file)
+- [Java 11](#java-11)
+- [Parameter](#parameter)
+
+### *C*
+
+##### CLI
+
+Command Line Interface, user interface that accepts input as lines of text.
+
+### *G*
+
+##### GUI
+
+Graphical User Interface, user interface that accepts input in means other than text, such as mouse clicks.
+
+### *I*
+
+##### INDEX
+
+Number indicating the position of a client, meeting, or product in their respective lists.
+
+In all commands `INDEX` **must be a positive integer** 1, 2, 3, …​`
+
+In [`editClient`](#715-edit-client-editclient), [`delClient`](#714-delete-client-delclient), and [`viewClient`](#713-view-client-viewclient) commands, `INDEX` refers to the  number shown by executing [`listClient`](#712-list-clients-listclient) command.
+
+e.g. David Li has position of 4 in the shown [client list](#712-list-clients-listclient)
+![](images/listClient.png)
+
+
+In [`viewMeeting`](#723-view-meeting-viewmeeting), [`delMeeting`](#724-delete-meeting-delmeeting), and [`editMeeting`](#725-edit-meeting-editmeeting) commands, `INDEX` refers to the number shown by executing [`listMeeting`](#722-list-meetings-listmeeting) command.
+
+e.g. The meeting shown has position of 1 in [meeting list](#722-list-meetings-listmeeting)
+![](images/listMeeting.png)
+
+In [`delProduct`](#733-delete-product-delproduct) command, `INDEX` refers to the number shown by executing [`listProduct`](#732-list-products-listproduct) command.
+
+e.g. Product6 has position of 5 in the shown [product list](#732-list-products-listproduct):
+![](images/listProduct.png)
+
+### *J*
+
+##### JSON file
+
+A file that stores data that has been structured according to the JSON data format. Refer to this article by [W3Schools](https://www.w3schools.com/js/js_json_intro.asp) for more information.
+
+##### JAR file
+
+A file having the extension .jar which is usually used to share applications written in Java.
+*MyInsuRec* can be downloaded and executed as a JAR file.
+
+##### Java 11
+
+Java 11 is a release version of Java which is required to run *MyInsuRec*.
+
+### *P*
+
+##### Parameter
+
+Value that should be provided to a command for it to execute.
+e.g. the `delClient` command requires the [`INDEX`](#index) value identifying a client in order to delete that client.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## 12. Contact Us
 
-Our team is committed to delivering a high-quality product, so we'd love to hear from you if you have any feedback or enquiries! 
+Our team is committed to delivering a high-quality product, so we'd love to hear from you if you have any feedback or enquiries!
 
 Please feel free to contact us at [myinsurec@gmail.com](myinsurec@gmail.com).
