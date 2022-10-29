@@ -306,16 +306,17 @@ See [addProduct](#331-adding-a-product-addproduct).
 </div>
 
 Examples:
-* Add a client named John Tan and his phone number.
+* Add a client named John Tan and his phone number
   * `addClient n/John Tan p/12345678`
-* Same as above, but with his birthday this time.
+* Same as above, but with his birthday this time
   * `addClient n/John Tan p/12345678 b/12122000`
-* Same as above, but with even more details.
+* Same as above, but with even more details
   * `addClient n/John Tan p/12345678 e/johntan@insurec.com a/123 ABC ROAD, #11-01 pd/Product1`
 
 #### 7.1.2 List clients: `listClient`
 
 Shows the list of clients in MyInsuRec.
+
 A valid filter can also be applied to show a selected list of clients.
 
 Format: `listClient [pd/PRODUCT || b/BIRTHDAY]`
@@ -391,7 +392,11 @@ Format: `editClient i/INDEX [n/NAME] [p/PHONE_NUMBER] [a/ADDRESS] [e/EMAIL] [b/B
 * At least one optional detail must be modified.
 * Maintain value of details not edited by the command.
 
+Use case:
+1. A client changed his address! Update the client details instead of having to removing the old record and creating a new record.
+
 Examples:
+
 Suppose MyInsuRec contains only one client 'John Tan' having phone number '0123456789':
 * Change the name of this client to 'John Smith'
   * `editClient i/1 n/John Smith` 
@@ -408,19 +413,20 @@ Add a new meeting to MyInsuRec.
 
 Format: `addMeeting i/INDEX d/DATE st/START_TIME et/END_TIME dn/DESCRIPTION`
 
+* A meeting contains the `INDEX` of the client in the clients list, the `DATE` and `TIME` for the meeting, and the `DESCRIPTION` of the meeting.
 * `INDEX` refers to the number of the client you are meeting with,
 as shown by executing the [`listClient`](#512-list-clients-listclient) command.
 * `DATE` should be given in the format DDMMYYYY. For example, 01022022 represents
 1 February 2022.
 * `START_TIME` and `END_TIME` should be give in the format HHMM. For example,
 1234 represents the 12:34PM.
-* A meeting contains the `INDEX` of the client in the clients list, the `DATE` and `TIME` for the meeting, and the `DESCRIPTION` of the meeting.
 
 Use case:
 1. You have just scheduled a meeting with a client! You can use this command to add the details of the meeting into _MyInsuRec_ to help remember the meeting details.
 
 Examples:
-* `addMeeting i/1 d/28092022 st/1400 et/1500 dn/Alex's Policy Renewal`
+* Add meeting for client with an `INDEX` of 1
+  * `addMeeting i/1 d/28092022 st/1400 et/1500 dn/Alex's Policy Renewal`
 
 <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 MyInsuRec can help you detect conflicting meeting times! For example, attempting to add a meeting from 1330 to 1430 when you already have one scheduled for 1300 to 1400 will display an error message.
@@ -429,6 +435,7 @@ MyInsuRec can help you detect conflicting meeting times! For example, attempting
 #### 7.2.2 List meetings: `listMeeting`
 
 Shows the list of meetings in MyInsuRec.
+
 A valid filter can also be applied to show a selected list of meetings.
 
 Format: `listMeeting [d/DATE]`
@@ -474,10 +481,6 @@ Examples:
 
 Delete a meeting from _MyInsuRec_.
 
-Use case:
-1. Remove a cancelled meeting.
-2. Clean up any meetings that already happened. This helps to reduce clutter in _MyInsuRec_.
-
 Format: `delMeeting i/INDEX`
 
 * Delete the meeting at the specified `INDEX`.
@@ -485,6 +488,9 @@ Format: `delMeeting i/INDEX`
 * `INDEX` **must be a positive integer** 1, 2, 3, …
 * If `INDEX` is a non-positive integer or not shown in `listMeeting`, an error will be shown!
 
+Use case:
+1. Remove a cancelled meeting.
+2. Clean up any meetings that already happened. This helps to reduce clutter in _MyInsuRec_.
 
 Examples:
 * Delete meeting with an `INDEX` of 2
@@ -501,6 +507,9 @@ Format: `editMeeting i/INDEX [d/DATE] [st/START TIME] [et/END TIME] [dn/DESCRIPT
 * The index **must be a positive integer** 1, 2, 3, …
 * At least one optional detail must be modified.
 * Details that are not edited will be kept as is.
+
+Use case:
+1. A meeting got pushed back! Update the meeting details instead of having to removing the old record and creating a new record.
 
 Examples:
 * Edit the description of the meeting with an `INDEX` of 1.
