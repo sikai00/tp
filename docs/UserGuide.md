@@ -291,14 +291,14 @@ This subsection covers all client-related commands.
 
 Add a new client to _MyInsuRec_.
 
-Use case:
-1. Suppose you found a potential client, you can use this command to add their particulars into _MyInsuRec_ so that you would not forget!
-
 Format: `addClient n/NAME p/PHONE_NUMBER [a/ADDRESS] [e/EMAIL] [b/BIRTHDAY] [pd/PRODUCT]`
 
 * A client **must** have a `NAME` and a `PHONE_NUMBER`.
 * `EMAIL`, `BIRTHDAY`, `ADDRESS` and `PRODUCT` are optional.
 * If a `PHONE_NUMBER` already exist in _MyInsuRec_, adding the same `PHONE_NUMBER` will result in an error!
+
+Use case:
+1. You have just found a potential client! You can use this command to add their particulars into _MyInsuRec_ to help remember their contact information and other details.
 
 <div markdown="span" class="alert alert-warning">**:exclamation: Caution:**
 In order to use `pd/PRODUCT` as a parameter, you must have already added that product into MyInsuRec via `addProduct`. 
@@ -306,32 +306,37 @@ See [addProduct](#331-adding-a-product-addproduct).
 </div>
 
 Examples:
-
-* Suppose you just met John, and he provided you with only his name and phone number, you can add him in using,
+* Add a client named John Tan and his phone number.
   * `addClient n/John Tan p/12345678`
-* Suppose John also provides his birthday, you can add him using,
+* Same as above, but with his birthday this time.
   * `addClient n/John Tan p/12345678 b/12122000`
-* Suppose John provides all his particular, you can add him using,
+* Same as above, but with even more details.
   * `addClient n/John Tan p/12345678 e/johntan@insurec.com a/123 ABC ROAD, #11-01 pd/Product1`
-* Suppose the phone number `12345678` is **already in** _MyInsuRec_, adding the following command will result in an error!
-  * `addClient n/John Tan p/12345678`
 
 #### 7.1.2 List clients: `listClient`
 
-List clients in MyInsuRec with a valid filter.
+Shows the list of clients in MyInsuRec.
+A valid filter can also be applied to show a selected list of clients.
 
 Format: `listClient [pd/PRODUCT || b/BIRTHDAY]`
 
-* A valid filter can be clients who have bought the product `PRODUCT` or clients whose birthday is in range `BIRTHDAY`
+* A valid filter can be clients who have bought the product `PRODUCT` or clients whose birthday is in range `BIRTHDAY`.
 * `BIRTHDAY` is specified by keywords. The possible keywords are:
   * `tomorrow` for a list of clients whose birthday is tomorrow;
   * `week` for a list of clients whose birthday is in the next week;
   * `month` for a list of clients whose birthday is in the next month.
 
+Use case:
+1. You want to find out all your clients with upcoming birthdays so that you can prepare ahead and ensure that every client gets some birthday well wishes!
+2. You want to identify the number of clients who purchased a particular product for analytics reasons.
+
 Examples:
-* `listClient`
-* `listClient pd/Product1`
-* `listClient b/week`
+* List all clients
+  * `listClient`
+* List all clients who purchased Product1
+  * `listClient pd/Product1`
+* List all clients with their birthdays in the next week
+  * `listClient b/week`
 
 <div markdown="span" class="alert alert-warning">**:exclamation: Caution:** Both filters cannot exist simultaneously.
 A user can only apply one filter at each time. For example, `listClient pd/Product1 b/week` is strictly not allowed.
@@ -348,35 +353,30 @@ Format: `viewClient i/INDEX`
 * The `INDEX` **must be a positive integer** 1, 2, 3, …​
 
 Use case:
-
 1. View more specific details related to the client such as address and birthday which are not shown in the list of clients. This will help you foster a stronger relationship with your clients because you can wish them happy birthday!
 
 Examples:
-
-* View client at index 1
+* View client with an `INDEX` of 1
   * `viewClient i/1`
 
 #### 7.1.4 Delete client: `delClient`
 
 Delete the specified client from _MyInsuRec_.
 
-Use case:
-1. Suppose your client no longer requires your services and would like you to remove their personal information,
-you can use this command to remove their details from _MyInsuRec_.
-
 Format: `delClient i/INDEX`
 
 * Delete the client at the specified `INDEX`.
-
 * `INDEX` refers to the index number shown by executing [`listClient`](#312-list-clients-listclient) command.
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
 * If `INDEX` is a non-positive integer or not shown in `listClient`, an error will be shown!
 
-Examples:
+Use case:
+1. Suppose your client no longer requires your services and would like you to remove their personal information. You can use this command to remove their details from _MyInsuRec_.
 
-* Suppose the second client in `listClient` request to have their information remove, you can remove them by using,
+Examples:
+* Delete the client with an `INDEX` of 2
   * `delClient i/2`
-* Suppose there is a total of 5 clients shown in your `listClient`, the following command will result in an error!
+* Delete the client with an `INDEX` of 6
   * `delClient i/6`
 
 #### 7.1.5 Edit client: `editClient`
@@ -393,8 +393,10 @@ Format: `editClient i/INDEX [n/NAME] [p/PHONE_NUMBER] [a/ADDRESS] [e/EMAIL] [b/B
 
 Examples:
 Suppose MyInsuRec contains only one client 'John Tan' having phone number '0123456789':
-* `editClient i/1 n/John Smith` changes the name of this client to 'John Smith'.
-* `editClient i/1 e/johntan@insurec.com` adds the email 'johntan@insurec.com' to the client.
+* Change the name of this client to 'John Smith'
+  * `editClient i/1 n/John Smith` 
+* Add email 'johntan@insurec.com'
+  * `editClient i/1 e/johntan@insurec.com`
 
 ### 7.2 Meeting commands
 
@@ -414,6 +416,9 @@ as shown by executing the [`listClient`](#512-list-clients-listclient) command.
 1234 represents the 12:34PM.
 * A meeting contains the `INDEX` of the client in the clients list, the `DATE` and `TIME` for the meeting, and the `DESCRIPTION` of the meeting.
 
+Use case:
+1. You have just scheduled a meeting with a client! You can use this command to add the details of the meeting into _MyInsuRec_ to help remember the meeting details.
+
 Examples:
 * `addMeeting i/1 d/28092022 st/1400 et/1500 dn/Alex's Policy Renewal`
 
@@ -423,38 +428,28 @@ MyInsuRec can help you detect conflicting meeting times! For example, attempting
 
 #### 7.2.2 List meetings: `listMeeting`
 
-Shows a list of meetings in MyInsuRec.
+Shows the list of meetings in MyInsuRec.
+A valid filter can also be applied to show a selected list of meetings.
 
 Format: `listMeeting [d/DATE]`
-
-Use case:
-1. Get an overview of all your upcoming meetings. This is especially useful for if you have a busy and packed schedule, and want to ease your mental load of having to recall all of your upcoming meetings!
-2. Organize all your meetings in a single place, so you don't have to worry about missing a meeting ever again.
-
-<div markdown="block" class="alert alert-info">**:information_source: Note:**
-
-* You can use the `d/DATE` parameter optionally to view the list of meetings happening in that time period!
-
+ 
+* A valid filter can be upcoming meetings happening in range `DATE`.
 * `DATE` is specified by keywords. The possible keywords are:
   * `tomorrow` for a list of meetings happening tomorrow;
   * `week` for a list of meetings happening in the next week;
   * `month` for a list of meetings happening in the next month.
 
-* For example, `listMeeting d/week` will show a list of meetings happening in the next week.
-
-* This is an excellent feature if you want to get a quick overview of your upcoming schedule!
-
-</div>
+Use case:
+1. Get an overview of all your upcoming meetings. This is especially useful for if you have a busy and packed schedule, and want to ease your mental load of having to recall all of your upcoming meetings!
+2. Organize all your meetings in a single place, so you don't have to worry about missing a meeting ever again.
 
 <div markdown="span" class="alert alert-success">**:bulb: Tips and tricks:**
 This command is used to get the index of a meeting. In order to perform commands related to a particular meeting such as `editMeeting`, you will have to first get its index by running `listMeeting`. So, expect to use this command a lot!
 </div>
 
 Examples:
-
 * List all meetings
     * `listMeeting`
-
 * List meetings happening in the next month
     * `listMeeting d/month`
 
@@ -469,18 +464,19 @@ Format: `viewMeeting i/INDEX`
 * The `INDEX` **must be a positive integer** 1, 2, 3, …
 
 Use Case:
-
 1. Get an overview of the meeting and the client you are meeting with. This helps you become more prepared for the meeting and you will not have to remember every single small detail of the meeting!
 
 Examples:
-* `viewMeeting i/1`
+* View meeting with an `INDEX` of 1
+  * `viewMeeting i/1`
 
 #### 7.2.4 Delete meeting: `delMeeting`
 
 Delete a meeting from _MyInsuRec_.
 
 Use case:
-1. Suppose a meeting was cancelled, you can use this command to remove the scheduled meeting.
+1. Remove a cancelled meeting.
+2. Clean up any meetings that already happened. This helps to reduce clutter in _MyInsuRec_.
 
 Format: `delMeeting i/INDEX`
 
@@ -491,10 +487,8 @@ Format: `delMeeting i/INDEX`
 
 
 Examples:
-* Suppose the second meeting in `listMeeting` was cancelled, you can remove them by using,
+* Delete meeting with an `INDEX` of 2
   * `delMeeting i/2`
-* Suppose there is a total of 5 meetings shown in your `listMeeting`, the following command will result in an error!
-  * `delMeeting i/6`
 
 #### 7.2.5 Edit meeting: `editMeeting`
 
@@ -509,10 +503,8 @@ Format: `editMeeting i/INDEX [d/DATE] [st/START TIME] [et/END TIME] [dn/DESCRIPT
 * Details that are not edited will be kept as is.
 
 Examples:
-Suppose MyInsuRec contains only one meeting as created in the [`addMeeting`](#521-add-meeting-addmeeting) command:
-
-* `editMeeting i/1 dn/Follow up team meeting` changes the description of this meeting.
-* `editMeeting i/1 st/1500 et/1200` will show an error stating an invalid time, since the start time is later than end time.
+* Edit the description of the meeting with an `INDEX` of 1.
+  * `editMeeting i/1 dn/Follow up team meeting`
 
 ### 7.3 Product commands
 
@@ -533,11 +525,12 @@ Use Case:
 1. You can define your own insurance products that you sell and tag them to clients who have bought the product. Now you will not have to worry about forgetting which product did the client buy!
 
 Examples:
-* `addProduct pd/Product1`
+* Add product with product name of 'Product1'
+  * `addProduct pd/Product1`
 
 #### 7.3.2 List products: `listProduct`
 
-Show a list of all products in MyInsuRec.
+Show the list of products in MyInsuRec.
 
 Format: `listProduct`
 
@@ -546,7 +539,6 @@ Use case:
 2. This feature is used to get the index of a product, which is needed for most product-related commands.
 
 Examples:
-
 * List all products
   * `listProduct`
 
@@ -556,6 +548,11 @@ Deletes a product from *MyInsuRec*.
 This command removes this product from all the clients as well.
 
 Format: `delProduct i/INDEX`
+
+* Delete the product at the specified `INDEX`.
+* `INDEX` refers to the index number shown by executing [`listProduct`](#732-list-products-listproduct) command.
+* `INDEX` **must be a positive integer** 1, 2, 3, …
+* If `INDEX` is a non-positive integer or not shown in `listProduct`, an error will be shown!
 
 Use case:
 1. If you no longer offer this product and no clients have purchased it before, you can remove it from *MyInsuRec* and prevent it from cluttering up *MyInsuRec*!
@@ -569,8 +566,7 @@ This feature should only be used if there is a need to delete a product, which i
 </div>
 
 Examples:
-
-* Delete the product with index number 2
+* Delete product with an `INDEX` of 2
     * `delProduct i/2`
 
 ### 7.4 General commands
